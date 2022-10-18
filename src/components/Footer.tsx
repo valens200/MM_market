@@ -24,7 +24,7 @@ const links : Link[] = [
 
   },
   {
-    name:'Leettcode', 
+    name:'Leetcode', 
     link:"https://leetcode.com/valens250/"
   },
   {

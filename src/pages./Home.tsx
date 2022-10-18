@@ -92,7 +92,7 @@ const getClass = () => {
       <div className='w-[95%] translate-y-9 grid items-center h-[40%] mx-auto'>
       <div className='h-[10vh]  flex my-4 grid items-center  border w-[90%] mx-auto '>
         {showUrlForm ?   <div className='w-[96%] mx-auto flex h-[80%]'>
-        <input className='h-[70%] focus:outline-0 border text-black  w-[80%] p-4'  value={hashedLink}  type="text"/>
+        <input className='h-[70%] focus:outline-0 border text-black  w-[80%] p-4'  onChange={() => console.log("")} value={hashedLink}  type="text"/>
         <button onClick={() => copy()} className={getClass()} >{getContent()}</button>
         </div> : null }
       
