@@ -20,6 +20,8 @@ function Home() {
   const send = async() => {
     if(originalLink == null || originalLink == ""){
       toast.error("Url can not be empty");
+      console.log(originalLink);
+
       errorNumber += 1;
     }
     if(errorNumber > 0){
@@ -28,7 +30,7 @@ function Home() {
     try {
       setShortening(true)
       await axios.post(baseUrl+"/url", {
-        originalUrl:"https://moodle.benax.rw/mod/assign/view.php?id=730&action=view",
+        originalUrl:originalLink,
          shortUrl:"vava2003"
       }).then((result) => {
         setHashedLink(result.data.hashedUrl);
