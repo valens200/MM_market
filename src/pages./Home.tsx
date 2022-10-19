@@ -19,7 +19,7 @@ function Home() {
   let errorNumber = 0;
   const send = async() => {
     if(originalLink == null || originalLink == "" || !originalLink.startsWith("https://")){
-      toast.error("Url can not be empty");
+      toast.error("Url invalid url or empty  empty");
       console.log(originalLink);
 
       errorNumber += 1;
