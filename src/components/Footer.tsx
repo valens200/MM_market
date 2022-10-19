@@ -36,7 +36,7 @@ const links : Link[] = [
 
 function Footer() {
   return ( 
-    <div className='text-black grid items-center p-2  h-[6vh] fixed bottom-0 border w-[100%]'>
+    <div className='text-black text-[0.90rem] grid items-center p-2  h-[6vh] fixed bottom-0 border w-[100%]'>
         <div className='flex flex-row space-x-4 justify-center h-[70%] '>
         {links.map((link, index) => (
             <div key={index}>

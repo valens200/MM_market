@@ -77,7 +77,7 @@ function Message() {
     return (
         <div className=" w-[100%]   grid items-center h-screen text-white  ">
             <Nav />
-            <div className='md:w-[40%] w-[96%]  rounded shadow-lg border  p-4   h-[60%] mx-auto'>
+            <div className='md:w-[40%] w-[96%]  rounded shadow-lg border  p-4   h-[65%] mx-auto'>
                 <div className='w-[80%] mx-auto'>
             <ToastContainer className="text-white w-[20%] left-4" />
                     <form className='' onSubmit={handleSubmit} >
