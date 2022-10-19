@@ -12,7 +12,7 @@ function Nav() {
              </Link>
             </div>
             <div>
-            <p className='text-center text-[1.3rem] md:text-[2rem] text-black font-bold '>Short URL</p>
+            <p className='text-center text-[1.3rem] md:text-[2rem] text-black font-bold '>VshortURL</p>
 
             </div>
 
