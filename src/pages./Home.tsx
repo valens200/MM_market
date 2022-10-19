@@ -18,7 +18,7 @@ function Home() {
   const [shortening , setShortening ] = useState<boolean>(false)
   let errorNumber = 0;
   const send = async() => {
-    if(originalLink == null || originalLink == ""){
+    if(originalLink == null || originalLink == "" || !originalLink.startsWith("https://")){
       toast.error("Url can not be empty");
       console.log(originalLink);
 
