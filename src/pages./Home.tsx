@@ -75,6 +75,9 @@ function Home() {
     }
   }
 
+  const handleChange = (data : string) => {
+    setOriginalLink(data);
+  }
   useEffect(() => {
     const start = () => {
       setTimeout(() => {
@@ -98,7 +101,7 @@ function Home() {
 
             <div className=' w-[92%] md:w-[80%] mx-auto flex flex-row h-[7vh]'>
               <TextField className='h-[80%] rounded-r-0  w-[76%] md:w-[80%] p-4' onChange={
-                (e) => setOriginalLink(e.target.value)
+                 (e) => handleChange(e.target.value)
               } id="outlined-basic" label="Enter the url to shorten" variant="outlined" />
               <button onClick={() => send()} className='bg-[#0B0B45] md:p-0 rounded-r-lg  h-[6vh] md:h-[100%] w-[24%] font-bold hover:bg-[#00008B] '> {shortening ? <Loader /> : "Shorten"} </button>
             </div>
