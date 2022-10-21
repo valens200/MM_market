@@ -31,13 +31,9 @@ function Home() {
     try {
       setShortening(true)
       await axios.post(baseUrl + "/url", {
-        body: {
           originalUrl: originalLink,
           shortUrl: "vava2003"
-        },
-        headers: {
-          'Access-Control-Allow-Origin': "https://vshort.vercel.app/"
-        }
+       
       }).then((result) => {
         setHashedLink(result.data.hashedUrl);
         setOriginalLink(result.data.originalUrl)
