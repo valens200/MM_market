@@ -41,7 +41,7 @@ function Home() {
       }).catch((err) => {
         console.log(err);
         setShortening(false);
-        toast.error("Url is  invalid url or url is empty");
+        // toast.error("Url is  invalid url or url is empty");
       })
 
     } catch (error) {
