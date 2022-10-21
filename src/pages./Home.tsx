@@ -77,6 +77,7 @@ function Home() {
 
   const handleChange = (data : string) => {
     setOriginalLink(data);
+    setShowUrlForm(false)
   }
   useEffect(() => {
     const start = () => {
