@@ -62,7 +62,7 @@ function Message() {
                 message: message
             }).then((response) => {
                 if (response.status == 200) {
-                    toast.warning("Your message sent successfully! we respond soon.")
+                    toast.success("Your message sent successfully! we respond soon.")
                 }
                 console.log(response)
                 setIsLoading(false)
