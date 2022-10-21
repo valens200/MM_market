@@ -18,7 +18,7 @@ function Home() {
   const [showUrlForm, setShowUrlForm] = useState<boolean>(false);
   const [copied, setCOpied] = useState<boolean>(false);
   const [shortening, setShortening] = useState<boolean>(false)
-  const [startLoading, setStartLoading ] = useState<boolean>(true)
+  const [startLoading, setStartLoading] = useState<boolean>(true)
   let errorNumber = 0;
   const send = async () => {
     if (originalLink == null || originalLink == "") {
@@ -31,8 +31,13 @@ function Home() {
     try {
       setShortening(true)
       await axios.post(baseUrl + "/url", {
-        originalUrl: originalLink,
-        shortUrl: "vava2003"
+        body: {
+          originalUrl: originalLink,
+          shortUrl: "vava2003"
+        },
+        headers: {
+          'Access-Control-Allow-Origin': "https://vshort.vercel.app/"
+        }
       }).then((result) => {
         setHashedLink(result.data.hashedUrl);
         setOriginalLink(result.data.originalUrl)
@@ -83,7 +88,7 @@ function Home() {
 
     start();
   })
-  return  startLoading ?(<div className='h-screen grid items-center'>
+  return startLoading ? (<div className='h-screen grid items-center'>
     <HomeLOading />
   </div>) : (
     <div className='h-[100vh] grid items-center'>
@@ -96,7 +101,7 @@ function Home() {
             <p className='text-center text-[grey] my-3' >Past URL here and see The magic</p>
 
             <div className=' w-[92%] md:w-[80%] mx-auto flex flex-row h-[7vh]'>
-            <TextField className='h-[80%] rounded-r-0  w-[76%] md:w-[80%] p-4' onChange={
+              <TextField className='h-[80%] rounded-r-0  w-[76%] md:w-[80%] p-4' onChange={
                 (e) => setOriginalLink(e.target.value)
               } id="outlined-basic" label="Enter the url to shorten" variant="outlined" />
               <button onClick={() => send()} className='bg-[#0B0B45] md:p-0 rounded-r-lg  h-[6vh] md:h-[100%] w-[24%] font-bold hover:bg-[#00008B] '> {shortening ? <Loader /> : "Shorten"} </button>
