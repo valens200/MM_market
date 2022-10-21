@@ -113,7 +113,7 @@ function Home() {
           <div className='w-[95%] translate-y-5 grid items-center h-[30%] mx-auto'>
             <div className='h-[6vh]  flex my-4 grid items-center   w-[90%] mx-auto '>
               {showUrlForm ? <div className='w-[96%] mx-auto flex h-[80%]'>
-                <input className='h-[100%] focus:outline-0 border text-black  w-[80%] p-4' onChange={() => console.log("")} value={hashedLink.substring(8)} type="text" />
+                <input className='h-[100%] focus:outline-0 border text-black  w-[80%] p-4' onChange={() => console.log("")} value={hashedLink} type="text" />
                 <button onClick={() => copy()} className={getClass()} >{getContent()}</button>
               </div> : null}
 
