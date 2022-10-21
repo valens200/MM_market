@@ -38,6 +38,9 @@ function Footer() {
   return ( 
     <div className='text-black text-[0.90rem] grid items-center p-2  h-[6vh] fixed bottom-0 border w-[100%]'>
         <div className='flex flex-row space-x-4 justify-center h-[70%] '>
+          <div className='text-[grey]'>
+            <p>Contact me : </p>
+          </div>
         {links.map((link, index) => (
             <div key={index}>
                 <p className='text-[grey] hover:underline'><a href={link.link}>{link.name}</a></p>

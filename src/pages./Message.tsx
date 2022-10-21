@@ -62,8 +62,9 @@ function Message() {
                 message: message
             }).then((response) => {
                 if (response.status == 200) {
-                    toast.success(response.data)
+                    toast.warning("sorry for this feature! still in development")
                 }
+                console.log(response)
                 setIsLoading(false)
             }).catch((err) => {
                 console.log(err);
@@ -86,8 +87,8 @@ function Message() {
                             <p>Send Us a feedback</p>
                         </div>
                         {inputs.map((input, index) => (
-                            <div key={index} className='border mt-9 '>
-                                <TextField type={input.type} onChange={((e) => changeData(e.target.value, input.type))} fullWidth label={input.name} id="fullWidth" />
+                            <div key={index} className=' mt-9 '>
+                                  <TextField className='h-[80%]  w-[100%] focus:    outline-0 md:w-[100%] p-4' onChange={((e) => changeData(e.target.value, input.type))} id="outlined-basic" label={input.name} variant="outlined" />
                             </div>
                         ))}
                         <textarea onChange={(e) => setMessage(e.target.value)} name="" placeholder='Enter messge here' className='h-[15vh] p-2 w-[100%] mt-10 focus:outline-0 border-[#00008B] border text-black' id="" />
