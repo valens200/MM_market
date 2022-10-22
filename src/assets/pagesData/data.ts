@@ -1,3 +1,3 @@
 
 
-export const baseUrl : string = "https://vshortly.herokuapp.com";
+export const baseUrl : string = "https://vshortl.herokuapp.com";
