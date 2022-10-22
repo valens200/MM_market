@@ -64,10 +64,9 @@ function Message() {
                 if (response.status == 200) {
                     toast.success("Your message sent successfully! we respond soon.")
                 }
-                console.log(response)
                 setIsLoading(false)
             }).catch((err) => {
-                console.log(err);
+                toast.error("Some thing went wrong ");
             })
 
         } catch (error) {

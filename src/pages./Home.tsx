@@ -13,7 +13,6 @@ import Loader from '../components/Loader'
 import HomeLOading from '../components/HomeLOading'
 function Home() {
   const [originalLink, setOriginalLink] = useState<String>("");
-  console.log(originalLink)
   const [hashedLink, setHashedLink] = useState<string>("");
   const [showUrlForm, setShowUrlForm] = useState<boolean>(false);
   const [copied, setCOpied] = useState<boolean>(false);
@@ -40,7 +39,6 @@ function Home() {
         setShowUrlForm(true);
         setShortening(false);
       }).catch((err) => {
-        console.log(err);
         setShortening(false);
         toast.error("Url is  invalid");
       })
