@@ -40,7 +40,7 @@ function Home() {
         setShortening(false);
       }).catch((err) => {
         setShortening(false);
-        toast.warning(" sorr! We can not respond to you right now");
+        toast.error(" sorr! some thing went wrong ! please try again..");
       })
 
     } catch (error) {
