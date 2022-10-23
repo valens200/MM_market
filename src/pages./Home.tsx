@@ -40,7 +40,7 @@ function Home() {
         setShortening(false);
       }).catch((err) => {
         setShortening(false);
-        toast.error(" sorr! some thing went wrong ! please try again..");
+        toast.error(" sorry! this service is currently unvailable");
       })
 
     } catch (error) {
