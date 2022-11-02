@@ -1,22 +1,55 @@
-import React from 'react'
-import image from '../assets/images/images/main.png'
-import  { BsHurricane } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
-function Nav() {
+import React, { useEffect, useRef, useState } from 'react'
+import { navLinks } from '../assets/pagesData/data'
+import Image from '../assets/images/hammer.avif'
+
+function  Nav() {
+
+  const navRef = useRef<HTMLDivElement>(null);
+  const WindowScrollY = useState(window.scrollY);
+  const changeBackground = () => {
+    if (window.scrollY != 0) {
+      navRef.current?.classList.add("bg-white")
+      navRef.current?.classList.add("text-black")
+      navRef.current?.classList.remove("text-white");
+    } else {
+      navRef.current?.classList.remove("bg-white");
+      navRef.current?.classList.remove("text-black");
+      navRef.current?.classList.add("text-white");
+      navRef.current?.classList.add("shadow-lg");
+
+    }
+  }
+  const getClass = (link: string) => {
+    if (link == 'Login') {
+      return "hover:cursor-pointer border w-[50%] h-[80%] font-bold pt-1 text-center items-center rounded "
+    } else if (link == "Get started") {
+      return "hover:cursor-pointer bg-[blue] h-[80%] w-[14%] font-bold pt-1 text-center items-center rounded  ";
+    } else {
+      return "hover:cursor-pointer hover:underline"
+    }
+  }
+
+  useEffect(() => {
+    changeBackground();
+    window.addEventListener("scroll", changeBackground);
+  }, [WindowScrollY])
   return (
-    <div className='text-black h-[8vh] fixed top-0 w-[100%]  border mb-2 shadow-sm flex items-center'>
-        <div className='w-[70%] h-[60%] justify-between flex mx-auto'>
-            <div className='w-[50%] h-[70%] text-[4rem] text-[grey]' >
-             <Link to="/" className='h-[100%]' >
-               <BsHurricane  className='text-[2.6rem]' />
-             </Link>
+    <div className='h-[100%] bg-black  font-sans '>
+      <div className=' h-[10%] pt-10 flex flex-col space-y-20 w-[100%]  '>
+        <div ref={navRef} className='flex fixed top-0 p-2 items-center h-[8%] w-[100%]'>
+          <div className='w-[90%] flex mx-auto'>
+            <div className='w-[50%]'>
+              <h1 className='font-bold text-[2rem] '>MM</h1>
             </div>
-            <div>
-            <p className='text-center text-[1.3rem] md:text-[2rem] text-black font-bold '>VshortURL</p>
+            <div className='flex space-x-10 w-[50%] flex-row'>
+              {navLinks.map((link, index) => (
+                <a href={"/" + link.link}><p className={getClass(link.name)} key={index}>{link.name}</p></a>
+              ))}
 
             </div>
-
+          </div>
         </div>
+      </div>
     </div>
   )
 }
