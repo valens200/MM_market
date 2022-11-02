@@ -15,11 +15,11 @@ function Login() {
 
   };
   return (
-    <div className="">
-      <div className="h-[50vh] z-100">
+    <div className="h-[screen]">
+      <div className="h-[8vh] z-100">
         <Nav />
       </div>
-      <div className=" h-[56vh] z-20 -translate-y-[43vh]">
+      <div className=" h-[40vh] z-20 ">
         <div className=" mx-auto grid   items-center w-[100%] h-[100vh] ">
           <div className="border grid w-[97%]  shadow-lg bg-white  rounded md:w-[27%] pb-4 mx-auto h-[80%] text-black">
             <form
@@ -85,9 +85,9 @@ function Login() {
       </div>
       <div className="h-[50vh]">
       </div>
-      <div className="w-[100%] h-[40vh]">
+      {/* <div className="w-[100%] h-[40vh]">
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 }

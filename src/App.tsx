@@ -9,7 +9,6 @@ import Login from './pages./Login';
 import Register from './pages./Register';
 import Products from './pages./Products';
 import About from './pages./About';
-import AllProducts from './pages./AllProducts';
 function App() { 
 
 const [cout , setCount ] = useState<String>("")
@@ -20,7 +19,7 @@ const [cout , setCount ] = useState<String>("")
       <Route  path="/" element={<Home />}/>
       <Route path="/login" element={<Login />} />
       <Route path='/Register'  element={<Register />} />
-      <Route  path='/products' element={<AllProducts />} />
+      <Route  path='/products' element={<Products />} />
       <Route  path='/About' element={<About />} />
     </Routes>
       

@@ -21,7 +21,7 @@ function  Nav() {
   }
   const getClass = (link: string) => {
     if (link == 'Login') {
-      return "hover:cursor-pointer border w-[50%] h-[80%] font-bold pt-1 text-center items-center rounded "
+      return "hover:cursor-pointer border w-[8vw] h-[80%] font-bold pt-1 text-center items-center rounded "
     } else if (link == "Get started") {
       return "hover:cursor-pointer bg-[blue] h-[80%] w-[14%] font-bold pt-1 text-center items-center rounded  ";
     } else {
