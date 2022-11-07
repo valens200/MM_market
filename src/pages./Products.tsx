@@ -2,28 +2,27 @@ import React from 'react'
 import Nav from '../components/Nav';
 import { useAppDispatch, useAppSelector } from '../components/app';
 import Footer from '../components/Footer';
-import { categories } from '../assets/pagesData/data';
 import { IconButton } from '@material-ui/core';
 import { Bool } from 'reselect/es/types';
+import { setClicked } from '../features/productSlice';
 function Products(): JSX.Element {
-
   const dispatch = useAppDispatch();
   const products = useAppSelector((store) => store.product.products)
+  const categories = useAppSelector((store) => store.product.categories);
   const products2 = products.slice(0, 4);
-
   const getClass = (index: number): string => {
     if (index % 2 == 0) {
-      return "flex border hover:shadow-lg p-2 md:h-[25vh] h-[30vh] flex-col space-x-4 md:flex-row-reverse";
+      return "flex border hover:shadow-lg  md:h-[25vh] h-[30vh] flex-col space-x-4 md:flex-row-reverse";
     } else {
-      return "flex border hover:shadow-lg p-2 md:h-[25vh] h-[30vh] flex-col space-x-4 md:flex-row";
+      return "flex border hover:shadow-lg  md:h-[25vh] h-[30vh] flex-col space-x-4 md:flex-row";
     }
   }
 
   const getClass2 = (clicked : boolean) : string =>  {
     if(clicked){
-      return "border rounded-full bg-[yellow] w-[10%] h-[62%]";
+      return "border rounded-full text-black border border-black font-bold  p-2 bg-[yellow] w-[12%] h-[100%]";
     }else{
-      return "border rounded-full w-[10%] h-[62%]";
+      return "border rounded-full p-2 w-[12%] h-[100%]";
     }
   }
   return (
@@ -40,7 +39,7 @@ function Products(): JSX.Element {
       <div className=' flex items-center h-[12%]'>
         <div className='h-[50%] w-[80%] mx-auto  flex  space-x-6 justify-center '>
           {categories.map((category, index) => (
-            <button className={getClass2(category.clicked)} key={index}>{category.name}</button>
+            <button onClick={() => dispatch(setClicked(category.id))} className={getClass2(category.clicked)} key={index}>{category.name}</button>
           ))}
         </div>
       </div>

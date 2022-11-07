@@ -9,3 +9,6 @@
     background-size: cover;
     background-position: 40% 40%;
 }
+.hi{
+    z-index: 100;
+}
