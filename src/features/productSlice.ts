@@ -100,7 +100,7 @@ const initialState = {
         "sum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
     },
   ],
-  selectedProduct: []
+  selectedProduct: {}
 };
 
 const productSlice = createSlice({
@@ -117,7 +117,7 @@ const productSlice = createSlice({
         category.clicked = false;
       })
     },
-    selectedPost: (state, action : PayloadAction<Array<never>>) => {
+    selectedPost: (state, action : PayloadAction<object>) => {
       state.selectedProduct = action.payload;
       console.log(state.selectedProduct)
 

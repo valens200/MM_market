@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '../components/app';
 import Footer from '../components/Footer';
 import { IconButton } from '@material-ui/core';
 import { Bool } from 'reselect/es/types';
+import CartProduct from '../components/CartProduct';
 import { setClicked } from '../features/productSlice';
 function Products(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -30,6 +31,7 @@ function Products(): JSX.Element {
       <div className='h-[9vh]'>
         <Nav />
       </div>
+      <CartProduct />
       <div className='main h-[30vh] flex items-center  mb-4'>
         <div className='w-[50%]  h-[50%] text-white mx-auto'>
           <h1 className='text-center font-bold text-[2.5rem]'>MUKESHA METAX</h1>

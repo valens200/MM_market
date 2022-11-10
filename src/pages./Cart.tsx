@@ -28,6 +28,12 @@ function Cart(): JSX.Element {
       return "border rounded-full p-2 w-[12%] h-[100%]";
     }
   }
+
+  const dispatchMethodes = (pro: object) => {
+    dispatch(selectedPost(pro))
+    console.log(pro);
+    console.log("hello ")
+  }
   return (
     <div className='h-screen z-100 bg-white'>
       <div className='h-[9vh]'>
@@ -50,7 +56,7 @@ function Cart(): JSX.Element {
       </div>
       <div className='flex  w-[60%] mx-auto flex-col space-y-9'>
         {products2.map((pro, index) => (
-          <div onClick={() => dispatch(selectedPost(pro))} className={getClass(index)}>
+          <div key={index} onClick={() => dispatchMethodes(pro)} className={getClass(index)}>
             <div className='h-[100%]  w-[95%] mx-auto md:mx-0 md:w-[50%]'>
               <img className='h-[100%] w-[100%]' src={pro.image} alt="" />
             </div>
