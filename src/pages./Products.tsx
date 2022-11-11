@@ -6,6 +6,8 @@ import { IconButton } from '@material-ui/core';
 import { Bool } from 'reselect/es/types';
 import CartProduct from '../components/CartProduct';
 import { setClicked } from '../features/productSlice';
+import { productButtons } from '../assets/pagesData/data';
+import  {Button} from '@material-ui/core';
 function Products(): JSX.Element {
   const dispatch = useAppDispatch();
   const products = useAppSelector((store) => store.product.products)
@@ -28,43 +30,47 @@ function Products(): JSX.Element {
   }
   return (
     <div className='h-screen'>
-      <div className='h-[9vh]'>
+      <div className='h-[13vh]'>
         <Nav />
       </div>
-      <CartProduct />
-      <div className='main h-[30vh] flex items-center  mb-4'>
+      {/* <CartProduct /> */}
+      <div className='main h-[30vh]  w-[100%]  flex items-center  mb-4'>
         <div className='w-[50%]  h-[50%] text-white mx-auto'>
           <h1 className='text-center font-bold text-[2.5rem]'>MUKESHA METAX</h1>
           <p className='text-center'>Your strength is our concern </p>
         </div>
       </div>
-      <div className=' flex items-center h-[12%]'>
-        <div className='h-[50%] w-[80%] mx-auto  flex  space-x-6 justify-center '>
+      <div className=' z-20 flex items-center h-[12%]'>
+        <div className='h-[40%] w-[80%] mx-auto  flex  space-x-6 justify-center '>
           {categories.map((category, index) => (
             <button onClick={() => dispatch(setClicked(category.id))} className={getClass2(category.clicked)} key={index}>{category.name}</button>
           ))}
         </div>
       </div>
-      <div className='flex  w-[60%] mx-auto flex-col space-y-9'>
-        {products2.map((pro, index) => (
-          <div className={getClass(index)}>
-            <div className='h-[100%] w-[95%] mx-auto md:mx-0 md:w-[50%]'>
-              <img className='h-[100%] w-[100%]' src={pro.image} alt="" />
-            </div>
-            <div className='md:w-[50%] w-[95%] h-[100%] mx-auto  flex  items-center'>
-              <div className='h-[60%]'>
+      <div className='w-[80%] z-20 mx-auto  mb-3  flex-wrap  flex space-x-5  rounded flex-row justify-between'>
+            {products2.map((ft, index) => (
+                <div className='h-[40vh] flex  hover:scale-100 mt-10   w-[30%]  hover:shadow-lg rounded flex-col space-y-5   border p-4 rounded' key={index}>
+                    <h1 className='font-bold' key={index}>{ft.name}</h1>
+                    <div className='h-[40%]  w-[100%]'>
+                        <img className='h-[100%] w-[100%]' src={ft.image} />
+                    </div>
+                    <div className='flex space-y-4 flex-col'>
+                        <p>{ft.description}</p>
+                        <div className='flex  items-bottom  w-[100%] flex-row space-x-3'>
+                            {productButtons.map((btn, index) => (
+                                <div className='  h-[94%] w-[40%]  space-x-2 bottom-0 p-2 border rounded  flex'>
+                                    <i >{<btn.icon />}</i>
+                                    <button>{btn.name}</button>
+                                </div>
+                            ))}
+                            <Button variant='outlined' >Available</Button>
+                        </div>
 
-                <h1>{pro.name}</h1>
-                <p>{pro.description}</p>
-                <div className='w-[100%] flex flex-row space-x-8 mt-6'>
-                  <button className='border w-[30%]  hover:bg-black-100 bg-[black] text-white rounded h-[4vh] text-center'>{"Add to cart"}</button>
-                  <button className='border w-[30%]  hover:bg-black hover:text-white rounded h-[4vh] text-center'>Add to wish list</button>
+                    </div>
+
                 </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+            ))}
+        </div>
       <div className='h-[30vh] mt-[10vh]  bottom-0 relative w-[100%]'>
         <Footer />
       </div>

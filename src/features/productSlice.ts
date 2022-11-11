@@ -88,6 +88,12 @@ const initialState = {
         "sum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
     },
     {
+      image: span,
+      name: "Spanners",
+      description:
+        "sum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+    },
+    {
       image: hammer,
       name: "hammers",
       description:

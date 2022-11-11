@@ -4,15 +4,16 @@ import { footerLInks } from '../assets/pagesData/data'
 import { TextField } from '@material-ui/core'
 import { sendEMailInputs } from '../assets/pagesData/data'
 import { Link } from 'react-router-dom'
+import { BsFillArrowDownCircleFill, BsFillArrowUpCircleFill } from "react-icons/bs"
 function Footer() {
     return (
-        <div className='w-[100%] h-[100%]  bg-[#0D2241] '>
-            <div className='flex flex-row  justify-between w-[90%] mx-auto items-center p-4'>
-                <div className='w-[50%] h-[90%]  text-white justify-between  items-center  flex flex-row '>
+        <div className='w-[100%] h-[100%]  bg-[#33334D]'>
+            <div className='flex justify-between  flex-row  justify-between w-[90%] mx-auto items-center p-4'>
+                <div className='w-[80%]  h-[90%]  mx-auto text-white justify-between  items-center  flex flex-row '>
                     {footerLInks.map((link, index) => (
                         <div className='h-[90%]' key={index}>
-                            <h1>{link.title}</h1>
-                            <ul className='flex flex-col space-y-2'>
+                            <h1 className='font-bold'>{link.title}</h1>
+                            <ul className='flex text-[0.80rem] mt-4  flex-col space-y-2'>
                                 {link.links.map((link, index) => (
                                     <Link to={"/" + link.link}>
                                         <li className='hover:underline' key={index}>{link.name}</li>
@@ -22,29 +23,11 @@ function Footer() {
                         </div>
                     ))}
                 </div>
-                <div className='w-[50%]  text-white'>
-                    <p className='text-center'>Contact us</p>
-                    <form className='flex flex-col space-y-4'>
-                        {sendEMailInputs.map((input, index) => (
-                            <div key={index} className='text-white w-[60%] mx-auto  '>
-                                <TextField
-                                    className="h-[100%]  text-white rounded-r-0   md:w-[100%] p-4"
-                                    label={input.name}
-                                    type={input.type}
-                                    id="outlined-basic"
-                                    variant="outlined"
-                                />
-                            </div>
-                        ))}
-                        <div className='w-[60%] h-[5vh] mx-auto text-center'>
-                            <input type="submit" value="send" className='border h-[100%] w-[100%]' />
-                        </div>
-
-                    </form>
-
-                </div>
+                <svg className="animate-bounce w-[20%] h-[100%]   flex items-center mt-10...">
+                    <BsFillArrowUpCircleFill  className='text-[4rem] float-right  h-[20%] text-white '/>
+                </svg>
             </div>
-            <div className='w-[80%] text-white text-center mx-auto'>
+            <div className='w-[80%] bottom-0 text-white text-center mx-auto'>
                 <p>&copy; mukeshametax. Allrights reserved</p>
             </div>
         </div>

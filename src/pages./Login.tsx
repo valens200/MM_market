@@ -16,7 +16,7 @@ function Login() {
   };
   return (
     <div className="h-[screen]">
-      <div className="h-[8vh] z-100">
+      <div className="h-[13vh] z-100">
         <Nav />
       </div>
       <div className=" h-[40vh] z-20 ">
@@ -85,9 +85,9 @@ function Login() {
       </div>
       <div className="h-[50vh]">
       </div>
-      {/* <div className="w-[100%] h-[40vh]">
+      <div className="w-[100%] mt-9 h-[40vh]">
         <Footer />
-      </div> */}
+      </div>
     </div>
   );
 }

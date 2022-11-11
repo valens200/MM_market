@@ -1,7 +1,18 @@
 import { type } from "os";
-
+import { BsCartPlus } from "react-icons/bs";
+import { FiEye } from "react-icons/fi";
+import {
+  BsFillTelephoneFill,
+  BsFillCalendar2Fill,
+  BsFillAlarmFill,
+  BsFillVolumeUpFill,
+} from "react-icons/bs";
 export const baseUrl: string = "https://vshortl.herokuapp.com";
-
+type Divs = {
+  p: string[];
+  background: string;
+};
+// export const topNavs = [{name: "mukunzishop@gmail.com"}, {name: "07828"}]
 export const categories = [
   {
     name: "Masonry",
@@ -43,12 +54,60 @@ export const navLinks = [
   {
     name: "Contacts",
   },
-  {
-    name: "Login",
-    link: "login",
-  },
 ];
 
+export const divs: Divs[] = [
+  {
+    p: [
+      "This is the online construction materials shooping",
+      "Come and book your own and pay smoothly at low prices",
+      "You strength is our concern",
+    ],
+    background: "main",
+  },
+  {
+    p: [
+      "This is the online construction materials shooping",
+      "Come and book your own and pay smoothly at low prices",
+      "You strength is our concern",
+    ],
+    background: "main",
+  },
+  {
+    p: [
+      "This is the online construction materials shooping",
+      "Come and book your own and pay smoothly at low prices",
+      "You strength is our concern",
+    ],
+    background: "main",
+  },
+  {
+    p: [
+      "This is the online construction materials shooping",
+      "Come and book your own and pay smoothly at low prices",
+      "You strength is our concern",
+    ],
+    background: "main",
+  },
+];
+export const topNavs = [
+  {
+    icon: BsFillCalendar2Fill,
+    name: "mkunzishop@gmail.com",
+  },
+  {
+    icon: BsFillTelephoneFill,
+    name: "0782825742",
+  },
+  {
+    icon: BsFillVolumeUpFill,
+    name: "mkunzi250",
+  },
+  {
+    icon: BsFillAlarmFill,
+    name: "Help",
+  },
+];
 export const sendEMailInputs = [
   { name: "Your fullName", type: "text" },
   { name: "Your Email", type: "email" },
@@ -131,4 +190,56 @@ export const footerLInks = [
       },
     ],
   },
+  {
+    title: "Customer Services",
+    links: [
+      {
+        name: "Trade Assurance",
+        link: "",
+      },
+      {
+        name: "Your orders",
+        link: "About",
+      },
+      {
+        name: "Delivery Rates & Shipping policies",
+        link: "products",
+      },
+      {
+        name: "Returns & Refunding",
+        link: "",
+      },
+    ],
+  },
+
+  {
+    title: "Get help",
+    links: [
+      {
+        name: "SL Business Card",
+        link: "",
+      },
+      {
+        name: "Spider Lotus and COVID-19",
+        link: "About",
+      },
+      {
+        name: "SL Assistant",
+        link: "products",
+      },
+      {
+        name: "Manage Your Account",
+        link: "",
+      },
+      {
+        name: "Help",
+        link: "",
+      },
+    ],
+  },
+];
+
+export const productButtons = [
+  { icon: FiEye, name: "View Details" },
+  { icon: BsCartPlus, name: "Add to cart" },
 ];

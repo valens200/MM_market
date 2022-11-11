@@ -8,7 +8,23 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 40% 40%;
+    z-index: 100;
 }
 .hi{
     z-index: 100;
+}
+
+ .control-next.control-arrow:before{
+     border-left: 8px solid #fff; 
+     background-color: black;
+     font-size: larger;
+     width: 200px;
+     visibility: hidden;
+    
+}
+.control-prev.control-arrow{
+    visibility: hidden;
+    /* width: 200px;
+    font: bolder;
+    background-color: black; */
 }
