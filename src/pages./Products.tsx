@@ -8,6 +8,7 @@ import CartProduct from '../components/CartProduct';
 import { setClicked } from '../features/productSlice';
 import { productButtons } from '../assets/pagesData/data';
 import  {Button} from '@material-ui/core';
+import { selectedPost } from '../features/productSlice';
 function Products(): JSX.Element {
   const dispatch = useAppDispatch();
   const products = useAppSelector((store) => store.product.products)
@@ -33,7 +34,7 @@ function Products(): JSX.Element {
       <div className='h-[13vh]'>
         <Nav />
       </div>
-      {/* <CartProduct /> */}
+      <CartProduct />
       <div className='main h-[30vh]  w-[100%]  flex items-center  mb-4'>
         <div className='w-[50%]  h-[50%] text-white mx-auto'>
           <h1 className='text-center font-bold text-[2.5rem]'>MUKESHA METAX</h1>
@@ -49,7 +50,7 @@ function Products(): JSX.Element {
       </div>
       <div className='w-[80%] z-20 mx-auto  mb-3  flex-wrap  flex space-x-5  rounded flex-row justify-between'>
             {products2.map((ft, index) => (
-                <div className='h-[40vh] flex  hover:scale-100 mt-10   w-[30%]  hover:shadow-lg rounded flex-col space-y-5   border p-4 rounded' key={index}>
+                <div onClick={() => dispatch(selectedPost(ft))} className='h-[40vh] flex  hover:scale-100 mt-10   w-[30%]  hover:shadow-lg rounded flex-col space-y-5   border p-4 rounded' key={index}>
                     <h1 className='font-bold' key={index}>{ft.name}</h1>
                     <div className='h-[40%]  w-[100%]'>
                         <img className='h-[100%] w-[100%]' src={ft.image} />

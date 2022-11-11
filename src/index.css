@@ -13,6 +13,10 @@
 .hi{
     z-index: 100;
 }
+.cart{
+    position: sticky;
+    top: 0;
+}
 
  .control-next.control-arrow:before{
      border-left: 8px solid #fff; 

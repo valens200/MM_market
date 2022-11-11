@@ -42,7 +42,7 @@ function Home() {
           <Features />
         </div>
       </div>
-      <div className='h-[30vh] mt-[35vh]  bottom-0 relative w-[100%]'>
+      <div className='h-[30vh]  mt-[35vh]  bottom-0 relative w-[100%]'>
         <Footer />
       </div>
     </div>

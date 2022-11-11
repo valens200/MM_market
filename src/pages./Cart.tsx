@@ -7,6 +7,10 @@ import { Bool } from 'reselect/es/types';
 import { setClicked } from '../features/productSlice';
 import CartProduct from '../components/CartProduct';
 import { selectedPost } from '../features/productSlice';
+import { Parameter } from '../features/productSlice';
+import { productButtons } from '../assets/pagesData/data';
+import { Button } from '@material-ui/core';
+import { Rating } from '@mui/material';
 function Cart(): JSX.Element {
   const dispatch = useAppDispatch();
   const products = useAppSelector((store) => store.product.products)
@@ -29,14 +33,14 @@ function Cart(): JSX.Element {
     }
   }
 
-  const dispatchMethodes = (pro: object) => {
+  const dispatchMethodes = (pro: Parameter) => {
     dispatch(selectedPost(pro))
     console.log(pro);
     console.log("hello ")
   }
   return (
     <div className='h-screen z-100 bg-white'>
-      <div className='h-[9vh]'>
+      <div className='h-[13vh]'>
         <Nav />
         <CartProduct />
       </div>
@@ -47,30 +51,28 @@ function Cart(): JSX.Element {
           <p className='text-center mt-4  font-bold'>Your cart</p>
         </div>
       </div>
-      <div className=' flex items-center h-[12%]'>
-        <div className='h-[50%] w-[80%] mx-auto  flex  space-x-6 justify-center '>
-          {categories.map((category, index) => (
-            <button onClick={() => dispatch(setClicked(category.id))} className={getClass2(category.clicked)} key={index}>{category.name}</button>
-          ))}
-        </div>
-      </div>
-      <div className='flex  w-[60%] mx-auto flex-col space-y-9'>
-        {products2.map((pro, index) => (
-          <div key={index} onClick={() => dispatchMethodes(pro)} className={getClass(index)}>
-            <div className='h-[100%]  w-[95%] mx-auto md:mx-0 md:w-[50%]'>
-              <img className='h-[100%] w-[100%]' src={pro.image} alt="" />
+      <div className='w-[80%] mx-auto  mb-3  flex-wrap h-[100%] flex space-x-5  rounded flex-row justify-between'>
+        {products2.map((ft, index) => (
+          <div className='h-[40%] flex  hover:scale-100 mt-10   w-[30%]  hover:shadow-lg rounded flex-col space-y-5   border p-4 rounded' key={index}>
+            <h1 className='font-bold' key={index}>{ft.name}</h1>
+            <div className='h-[40%]  w-[100%]'>
+              <img className='h-[100%] w-[100%]' src={ft.image} />
             </div>
-            <div className='md:w-[50%] w-[95%] h-[100%] mx-auto  flex  items-center'>
-              <div className='h-[60%]'>
-
-                <h1>{pro.name}</h1>
-                <p>{pro.description}</p>
-                <div className='w-[100%] flex flex-row space-x-8 mt-6'>
-                  <button className='border w-[30%]  hover:bg-black-100 bg-[black] text-white rounded h-[4vh] text-center'>{"Remove from  cart"}</button>
-                  <button className='border w-[30%]  hover:bg-black hover:text-white rounded h-[4vh] text-center'>Add to wish list</button>
-                </div>
+            <div className='flex space-y-4 flex-col'>
+              <p>{ft.description}</p>
+              <div className='flex  items-bottom  w-[100%] flex-row space-x-3'>
+                <Rating name="size-large" defaultValue={2} size="large" />
+                {productButtons.map((btn, index) => (
+                  <div className='  h-[94%] w-[40%]  space-x-2 bottom-0 p-2 border rounded  flex'>
+                    <i >{<btn.icon />}</i>
+                    <button>{btn.name}</button>
+                  </div>
+                ))}
+                <Button variant='outlined' >Available</Button>
               </div>
+
             </div>
+
           </div>
         ))}
       </div>
