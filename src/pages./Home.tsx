@@ -18,6 +18,7 @@ import Chooseus from '../components/Chooseus'
 import TrustedPartners from '../components/TrustedPartners'
 import Customers from '../components/Customers'
 import Otherproducts from '../components/Otherproducts'
+import ShortNav from '../components/ShortNav'
 import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill } from "react-icons/bs"
 
 function Home() {
@@ -38,6 +39,7 @@ function Home() {
     <div className='justify-between flex flex-col '>
       <div className='h-[8vh] items-center '>
         <Nav />
+        <ShortNav />
       </div>
       <Carousel autoFocus={true} interval={2000} autoPlay={true} infiniteLoop={true} >
         {divs.map((div, index) => (

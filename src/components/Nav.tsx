@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { navLinks } from '../assets/pagesData/data'
 import Image from '../assets/images/hammer.avif'
-import { BsFillCartFill, BsFillCaretDownFill } from "react-icons/bs"
+import { BsFillCartFill, BsFillCaretDownFill, BsJustify } from "react-icons/bs"
 import { topNavs } from '../assets/pagesData/data'
 import CartProduct from './CartProduct'
 function Nav() {
@@ -49,46 +49,20 @@ function Nav() {
 
         </div>
       </div>
-      {/* <div className='bg-[#1D1D43]  h-[40%] text-white '>
-        <div className='flex  h-[100%] flex-row  w-[90%] mx-auto items-center justify-between'>
-          <div className='flex h-[60%]  space-x-3'>
-            <div className=''>
-              <p>LOgo</p>
-            </div>
-            <div className='w-[60%]  h-[100%]'>
-              <input type="text" className='h-[100%] rounded p-2 focus:outline-0' placeholder="Search your product here" />
-            </div>
-          </div>
-          <div className='flex space-x-3'>
-            <div>
-              <p>Return and Orders</p>
-            </div>
-            <div className='flex space-x-2'>
-              <p>English-RW</p>
-              <BsFillCaretDownFill className='text-[1.3rem]' />
-            </div>
-          </div>
-          <div>
-            <p>Location</p>
-          </div>
-          <div className='flex space-x-2'>
-            <p>Sign in / register</p>
-            <BsFillCaretDownFill className='text-[1.3rem]' />
-          </div>
-          <div className='flex space-x-2'>
-            <BsFillCartFill className=' text-[2rem]' />
-            <p>Cart</p>
-          </div>
-        </div> */}
-      {/* </div> */}
-      <div className='text-black sticky  top-0  items-center top-0 flex h-[60%] space-x-8 flex-row justify-center '>
-        {navLinks.map((link, index) => (
-          <a href={"/" + link.link}><p className={getClass(link.name)} key={index}>{link.name}</p></a>
-        ))}
-        {/* <div className='flex float-right space-x-2'>
+      <div className=' text-black md:bg-white bg-[#33334D]  sticky top-0  h-[60%]'>
+        <div className=' items-center  hidden  md:flex space-x-8 h-[100%] flex-row justify-center '>
+          {navLinks.map((link, index) => (
+            <a href={"/" + link.link}><p className={getClass(link.name)} key={index}>{link.name}</p></a>
+          ))}
+          {/* <div className='flex float-right space-x-2'>
           <BsFillCartFill className=' text-[2rem]' />
           <p>Cart</p>
         </div> */}
+        </div>
+        <div className='md:hidden flex float-right h-[100%] flex items-center w-[10%] text-end text-black'>
+          <BsJustify  className='h-[80%] text-white font-bold text-[3.4rem]'/>
+        </div>
+
       </div>
     </div>
   )
