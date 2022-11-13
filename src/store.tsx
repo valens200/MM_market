@@ -1,13 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { formReducer } from './features/formSclice'
 import { productReducer } from './features/productSlice'
-
+import { pageReducer } from './features/pageSlice'
 // ...
 
 export const store = configureStore({
   reducer: {
     form:formReducer,
-    product:productReducer
+    product:productReducer,
+    page:pageReducer
   }
 })
 

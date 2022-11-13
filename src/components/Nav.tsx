@@ -3,6 +3,7 @@ import { navLinks } from '../assets/pagesData/data'
 import Image from '../assets/images/hammer.avif'
 import { BsFillCartFill, BsFillCaretDownFill } from "react-icons/bs"
 import { topNavs } from '../assets/pagesData/data'
+import CartProduct from './CartProduct'
 function Nav() {
 
   const navRef = useRef<HTMLDivElement>(null);
@@ -36,18 +37,19 @@ function Nav() {
   }, [WindowScrollY])
   return (
     <div className='h-[100%] text-white  font-sans '>
-      <div className='w-[100%] h-[23%] p-2 bg-[#33334D]  '>
+      <div className='w-[100%] h-[40%] p-2 bg-[#33334D]  '>
+
         <div className='flex w-[50%]  mx-auto space-x-4 justify-center text-[0.80rem]  flex-row'>
-          {topNavs.map((top,index) => (
+          {topNavs.map((top, index) => (
             <div className='flex space-x-2' key={index}>
               <p>{<top.icon />}</p>
               <p className='hover:underline'>{top.name}</p>
             </div>
           ))}
-        
+
         </div>
       </div>
-      <div className='bg-[#1D1D43]  h-[40%] text-white '>
+      {/* <div className='bg-[#1D1D43]  h-[40%] text-white '>
         <div className='flex  h-[100%] flex-row  w-[90%] mx-auto items-center justify-between'>
           <div className='flex h-[60%]  space-x-3'>
             <div className=''>
@@ -77,15 +79,17 @@ function Nav() {
             <BsFillCartFill className=' text-[2rem]' />
             <p>Cart</p>
           </div>
-        </div>
-      </div>
-      <div className='text-black sticky  items-center top-0 flex h-[37%] space-x-8 flex-row justify-center '>
+        </div> */}
+      {/* </div> */}
+      <div className='text-black sticky  top-0  items-center top-0 flex h-[60%] space-x-8 flex-row justify-center '>
         {navLinks.map((link, index) => (
           <a href={"/" + link.link}><p className={getClass(link.name)} key={index}>{link.name}</p></a>
         ))}
+        {/* <div className='flex float-right space-x-2'>
+          <BsFillCartFill className=' text-[2rem]' />
+          <p>Cart</p>
+        </div> */}
       </div>
-
-
     </div>
   )
 }

@@ -22,7 +22,6 @@ function Products(): JSX.Element {
                     </div>
                     <div className='md:w-[50%] w-[95%] h-[100%] mx-auto  flex  items-center'>
                         <div className='h-[60%]'>
-
                             <h1>{pro.name}</h1>
                             <p>{pro.description}</p>
                             <div className='w-[100%] flex flex-row space-x-8 mt-6'>

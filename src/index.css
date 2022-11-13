@@ -13,11 +13,27 @@
 .hi{
     z-index: 100;
 }
+.colum{
+    width: 700px;
+}
+.featured{
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    /* overflow: scroll; */
+}
+.choose{
+    background-image: url("./assets/images/choose.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .cart{
     position: sticky;
     top: 0;
 }
-
+::-webkit-scrollbar{
+    display: none;
+}
  .control-next.control-arrow:before{
      border-left: 8px solid #fff; 
      background-color: black;

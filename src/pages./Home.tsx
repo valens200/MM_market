@@ -9,15 +9,34 @@ import Deatils from '../components/Deatils'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import { divs } from '../assets/pagesData/data'
+import CartProduct from '../components/CartProduct'
+import { selectedPost } from '../features/productSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import Aboutus from '../components/Aboutus'
+import FeaturedProducts from '../components/FeaturedProducts'
+import Chooseus from '../components/Chooseus'
+import TrustedPartners from '../components/TrustedPartners'
+import Customers from '../components/Customers'
+import Otherproducts from '../components/Otherproducts'
+import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill } from "react-icons/bs"
 
 function Home() {
 
   const getClass = (bg: string) => {
     return bg + " h-[40vh]"
   }
+
+
+  const moveNext = () => {
+
+  }
+  const movePrevious = () => {
+
+  }
+  const dispatch = useDispatch();
   return (
     <div className='justify-between flex flex-col '>
-      <div className='h-[13vh] items-center '>
+      <div className='h-[8vh] items-center '>
         <Nav />
       </div>
       <Carousel autoFocus={true} interval={2000} autoPlay={true} infiniteLoop={true} >
@@ -35,14 +54,33 @@ function Home() {
         ))}
       </Carousel>
       <div className='flex flex-col space-y-10'>
-        <div>
-          <h1 className='font-bold text-center'>Sample products</h1>
+
+        <div className='md:w-[70%] w-[100%] mx-auto'>
+          <h1 className='text-center text-[1.4rem] '>About us</h1>
+          <div className='md:w-[50%] w-[95%] mx-auto text-center mt-3 '>
+            <p>This is the online construction materials shooping</p>
+            <p>Come and book your own and pay smoothly at low prices</p>
+            <p>You strength is our concern</p>
+          </div>
+          <Aboutus />
         </div>
-        <div className='w-[100%]   h-[70vh] mt-20 mb-[10%]  flex items-center text-black'>
-          <Features />
+        <div className='w-[100%]  mb-10   flex flex-row items-center  mx-auto'>
+          <FeaturedProducts />
+        </div>
+        <div className=' md:w-[95%]  w-[100%] mx-auto'>
+          <TrustedPartners />
+        </div>
+        <div className="h-[37vh] ">
+          <div className='h-[100%] choose'>
+            <Chooseus />
+          </div>
+        </div>
+    
+        <div className='w-[100%]   '>
+          <Customers />
         </div>
       </div>
-      <div className='h-[30vh]  mt-[35vh]  bottom-0 relative w-[100%]'>
+      <div className=' mt-[30%]  w-[100%]'>
         <Footer />
       </div>
     </div>

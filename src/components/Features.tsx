@@ -5,6 +5,8 @@ import { useAppSelector, useAppDispatch } from './app';
 import { RootState } from '../store';
 import { productButtons } from '../assets/pagesData/data';
 import { Button } from '@material-ui/core';
+import { selectedPost } from '../features/productSlice';
+import CartProduct from './CartProduct';
 
 function Features(): JSX.Element {
     const products = useAppSelector((store) => store.product.products)
@@ -23,7 +25,7 @@ function Features(): JSX.Element {
     return (
         <div className='w-[80%] mx-auto  mb-3  flex-wrap h-[100%] flex space-x-5  rounded flex-row justify-between'>
             {products2.map((ft, index) => (
-                <div className='h-[61%] flex  hover:scale-100 mt-10   w-[30%]  hover:shadow-lg rounded flex-col space-y-5   border p-4 rounded' key={index}>
+                <div onClick={() => dispatch(selectedPost(ft))} className='h-[61%] flex  hover:scale-100 mt-10   w-[30%]  hover:shadow-lg rounded flex-col space-y-5   border p-4 rounded' key={index}>
                     <h1 className='font-bold' key={index}>{ft.name}</h1>
                     <div className='h-[40%]  w-[100%]'>
                         <img className='h-[100%] w-[100%]' src={ft.image} />

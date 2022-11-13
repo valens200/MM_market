@@ -240,6 +240,27 @@ export const footerLInks = [
 ];
 
 export const productButtons = [
-  { icon: FiEye, name: "View Details" },
+  // { icon: FiEye, name: "View Details" },
   { icon: BsCartPlus, name: "Add to cart" },
 ];
+
+export const clients = [
+  {
+    img:"",
+    name:"construction",
+    bio:"Popular contruction company loved my the cloud",
+    message:" metax i used to provide weak bulding but now i'm safe",
+  },
+  {
+    img:"",
+    name:"Horizon construction",
+    bio:"Popular contruction company loved my the cloud",
+    message:"Before using Rwanda metax i used to provide weak bulding but now i'm safe",
+  },
+  {
+    img:"",
+    name:"main construction",
+    bio:"Popular contruction company loved my the cloud",
+    message:"Before using Rwanda metax i used to provide weak bulding but now i'm safe",
+  }
+]

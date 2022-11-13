@@ -10,7 +10,6 @@ import { selectedPost } from '../features/productSlice';
 import { Parameter } from '../features/productSlice';
 import { productButtons } from '../assets/pagesData/data';
 import { Button } from '@material-ui/core';
-import { Rating } from '@mui/material';
 function Cart(): JSX.Element {
   const dispatch = useAppDispatch();
   const products = useAppSelector((store) => store.product.products)
@@ -42,8 +41,8 @@ function Cart(): JSX.Element {
     <div className='h-screen z-100 bg-white'>
       <div className='h-[13vh]'>
         <Nav />
-        <CartProduct />
       </div>
+        <CartProduct />
       <div className='main h-[30vh] flex items-center  mb-4'>
         <div className='w-[50%]  h-[50%] text-white mx-auto'>
           <h1 className='text-center font-bold text-[2.5rem]'>MUKESHA METAX</h1>
@@ -61,7 +60,9 @@ function Cart(): JSX.Element {
             <div className='flex space-y-4 flex-col'>
               <p>{ft.description}</p>
               <div className='flex  items-bottom  w-[100%] flex-row space-x-3'>
-                <Rating name="size-large" defaultValue={2} size="large" />
+                {/* <Rating name="size-large" defaultValue={2} size="large" /> */}
+                <p className="text-black">{ft.cost}</p>
+                <p className='text-black'>343490</p>
                 {productButtons.map((btn, index) => (
                   <div className='  h-[94%] w-[40%]  space-x-2 bottom-0 p-2 border rounded  flex'>
                     <i >{<btn.icon />}</i>
