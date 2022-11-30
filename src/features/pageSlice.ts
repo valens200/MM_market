@@ -9,6 +9,7 @@ interface CounterState {
 }
 
 const initialState = { 
+  shipingNavs: [{name:"Sign-In", active:true}, {name:"Shipping", active:false}, {name:"Payment", active:false}, {name:"Place Order", active:false}],
    clients : [
     {
       img:"",

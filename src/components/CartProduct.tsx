@@ -13,7 +13,7 @@ function CartProduct(): React.ReactPortal {
   const [value, setValue] = useState(3);
   const selectedProduct = useAppSelector((store) => store.product.selectedProduct)
   console.log("selected posts", selectedProduct)
-  return ReactDOM.createPortal(<div className='h-[55vh] float-right rounded sticky  top-0 -translate-y-[80vh] w-[30%]   bg-white  border '>
+  return ReactDOM.createPortal(<div className='h-[55vh] md:float-right rounded sticky md:shadow-0 shadow-lg sticky  top-40 -translate-y-[80vh] w-[94%] mx-auto md:w-[30%]   bg-white  border '>
     <div className='w-[100%] mx-auto  mb-3  flex-wrap h-[100%] flex space-x-5   flex-row justify-between'>
       <div className='h-[100%] flex  hover:scale-100 space-y-6  w-[100%]  hover:shadow-lg rounded flex-col  rounded'>
         <div className='h-[40%]  w-[100%]'>

@@ -82,7 +82,7 @@ function Home() {
           <Customers />
         </div>
       </div>
-      <div className=' mt-[30%]  w-[100%]'>
+      <div className=' mt-[10%]  w-[100%]'>
         <Footer />
       </div>
     </div>

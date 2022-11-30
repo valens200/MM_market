@@ -244,6 +244,8 @@ export const productButtons = [
   { icon: BsCartPlus, name: "Add to cart" },
 ];
 
+export const productBUttons2 = {icon:BsCartPlus, name: "Remove from cart"}
+
 export const clients = [
   {
     img:"",
@@ -264,3 +266,5 @@ export const clients = [
     message:"Before using Rwanda metax i used to provide weak bulding but now i'm safe",
   }
 ]
+
+export const shipingAddress = [{name:"FullName", type:"text"}, {name:"Address", type:"text"}, {name:"City", type:"text"}, {name:"Postal Code", type:"number"}, {name:"Country", type:"text"}]
