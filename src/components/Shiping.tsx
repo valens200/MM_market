@@ -19,20 +19,20 @@ function Shiping() {
     const ship = () => {
 
     }
-    return ReactDOM.createPortal(<div className='bg-white  rounded h-[80vh] pb-5  shadow-2xl   z-20 w-[46%] mx-auto ml-[20%]  fixed top-20'>
-        <div className='w-[90%] mx-auto flex flex-row justify-between items-center border-t-0 border-x-0  h-[14%]'>
+    return ReactDOM.createPortal(<div className='bg-white w-[90%]  rounded h-[80vh] pb-3  shadow-2xl   z-20 md:w-[30%] mx-auto md:ml-[20%] ml-[6%]  fixed top-20'>
+        <div className='md:w-[100%] mx-auto flex flex-row justify-between items-center border-t-0 border-x-0  h-[14%]'>
             {/* {shipingNavs.map((nav, index) => (
                 <p className={getClassName(nav.active)} key={index}>{nav.name}</p>
             ))} */}
-
+ 
         </div>
         <div className='w-[100%]'>
             <div className="border bg-white  rounded  pb-4  text-black">
                 <form
                     onSubmit={(e) => ship()}
-                    className="md:w-[80%] grid items-center mx-auto"
+                    className="md:w-[100%] grid items-center mx-auto"
                 >
-                    <div className="w-[90%] invisible mx-auto">
+                    <div className="md:w-[90%] invisible mx-auto">
                         <p className="text-center font-sans">
                            Plese enter your credentials to ship
                         </p>
