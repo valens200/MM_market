@@ -19,8 +19,6 @@ function Shiping() {
     const ship = () => {
 
     }
-
-
     return ReactDOM.createPortal(<div className='bg-white  rounded h-[80vh] pb-5  shadow-2xl   z-20 w-[46%] mx-auto ml-[20%]  fixed top-20'>
         <div className='w-[90%] mx-auto flex flex-row justify-between items-center border-t-0 border-x-0  h-[14%]'>
             {/* {shipingNavs.map((nav, index) => (
@@ -28,7 +26,6 @@ function Shiping() {
             ))} */}
 
         </div>
-
         <div className='w-[100%]'>
             <div className="border bg-white  rounded  pb-4  text-black">
                 <form
@@ -85,4 +82,4 @@ function Shiping() {
     )
 }
 
-export default Shiping
+export default Shiping  

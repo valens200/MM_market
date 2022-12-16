@@ -35,6 +35,30 @@ export const categories = [
     clicked: false,
   },
 ];
+
+
+export const guidelines = [
+  {
+    image:"https://images.ctfassets.net/p8xsnnoeyh42/1ASD26Y3jqzW91x4u9yOTE/d114e42099bd3352f2bee942c21f7b5a/icon-02.png",
+    title:"Purpose-built Solutions",
+    text:"We know tech talent – how to find, train, and grow. It’s in our DNA. Our focus on technical expertise means you get specialists, not generalists."
+  },
+  {
+    image:"https://images.ctfassets.net/p8xsnnoeyh42/2E1J3UNQTCp6zqJ73aKf90/39f54b8412f073fecafade414df8b576/icon-01.png",
+    title:"Extraordinary People",
+    text:"Smart people aren’t part of what we do. They’re everything. We’re in the business of servicing people with people, the best people out there."
+  },
+  {
+    image:"https://images.ctfassets.net/p8xsnnoeyh42/6evws2qkhEKRc0U2Lbx2gX/108ec43bda06b3206593d9b31f653b21/icon-03.png",
+    title:"Exceptional CX",
+    text:"Every interaction with a customer is an opportunity to grow brand loyalty and we take our role in delivering exceptional customer experiences seriously."
+  },
+  {
+    image:"https://images.ctfassets.net/p8xsnnoeyh42/5mBo7mC7TG4JalMfUGnHBy/c9ef2e9de3c7d090b2824d3fec0f5da9/icon-04.png",
+    title:"Focused on You",
+    text:"We customize our solutions to meet your needs, connecting you with the tech talent you need to deliver on your objectives."
+  }
+]
 export const navLinks = [
   {
     name: "Home",
@@ -43,9 +67,6 @@ export const navLinks = [
   {
     name: "About us",
     link: "About",
-  },
-  {
-    name: "What we do",
   },
   {
     name: "products",

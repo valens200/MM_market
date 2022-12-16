@@ -23,8 +23,9 @@ function Footer() {
                         </div>
                     ))}
                 </div>
-                <svg className="animate-bounce w-[20%] h-[100%]   flex items-center mt-10...">
-                    <BsFillArrowUpCircleFill  className='text-[4rem] float-right  h-[20%] text-white '/>
+                <svg className=" w-[100%] flex  h-[100%]  fixed top-[90vh]  mt-10...">
+                    
+                    <BsFillArrowUpCircleFill  className='text-[4rem]  float-right  h-[20%] text-white '/>
                 </svg>
             </div>
             <div className='w-[80%] bottom-0 text-white text-center mx-auto'>

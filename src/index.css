@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.myimage{
+    filter: brightness(40%)
+}
 .main{
     background-image:   url(./assets/images/image.png);
     background-repeat: no-repeat;
